@@ -19,6 +19,9 @@
     <repository>
       <id>github</id>
       <url>https://maven.pkg.github.com/esasiela/hc-spring-monorepo</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
     </repository>
   </repositories>
 
