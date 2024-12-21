@@ -53,7 +53,13 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/${{ github.actor }}/${{ env.IMAGE_NAME }}
+          tags: |
+            main
+            sha-${{ github.sha }}
           # ghcr.io/<your_username>/hc-sandbox-api:main
+
+      - name: Print github sha
+        run: echo "GitHub SHA - ${{ github.sha }}"
 
       - name: Build and push Docker image to GitHub Container registry
         id: push
