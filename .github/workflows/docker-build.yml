@@ -53,8 +53,8 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-          tags: |
-            main
+          #tags: |
+          #  main
           #  sha-${{ github.sha }}
           # ghcr.io/<your_username>/hc-sandbox-api:main
 

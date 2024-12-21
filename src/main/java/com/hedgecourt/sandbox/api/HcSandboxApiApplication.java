@@ -32,7 +32,7 @@ class TestController {
   public String getTestMessage() {
     Map<String, Object> response = new HashMap<>();
     response.put("message", HelloWorld.sayHello());
-    response.put("silent", "night");
+    response.put("deck", "the halls");
 
     try {
       return objectMapper.writeValueAsString(response) + "\n";
