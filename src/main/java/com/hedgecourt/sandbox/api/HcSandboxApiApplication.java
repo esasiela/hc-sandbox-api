@@ -40,4 +40,17 @@ class TestController {
       throw new RuntimeException("Failed to convert response to JSON", e);
     }
   }
+
+  @GetMapping("/nested/abc")
+  public String getNestedMessage() {
+    Map<String, Object> response = new HashMap<>();
+    response.put("message", HelloWorld.sayHello());
+    response.put("nested", Boolean.TRUE);
+
+    try {
+      return objectMapper.writeValueAsString(response) + "\n";
+    } catch (JsonProcessingException e) {
+      throw new RuntimeException("Failed to convert response to JSON", e);
+    }
+  }
 }
