@@ -5,7 +5,7 @@ USER spring:spring
 
 WORKDIR /app
 
-COPY target/hc-sandbox-api-1.0.0-SNAPSHOT.jar app.jar
+COPY target/hc-sandbox-api.jar app.jar
 
 EXPOSE 8080
 

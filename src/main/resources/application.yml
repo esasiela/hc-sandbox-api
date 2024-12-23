@@ -1,0 +1,32 @@
+hc:
+  common: value
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+hc:
+  env: development
+  test: foo
+
+---
+spring:
+  config:
+    activate:
+      on-profile: test
+
+hc:
+  env: testEnv
+  test: testTest
+
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+
+hc:
+  env: production
+  test: bar
