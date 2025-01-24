@@ -6,6 +6,24 @@ spring:
     serialization:
       indent_output: true
 
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          # 8081 is the hc-auth-api Docker container port
+          jwk-set-uri: http://localhost:8081/.well-known/jwks.json
+
+logging:
+  level:
+    root: INFO
+    com.hedgecourt: DEBUG
+
+  springdoc:
+api-docs:
+  enabled: true
+swagger-ui:
+  enabled: true
+
 hc:
   common: value
 
@@ -16,7 +34,7 @@ spring:
       on-profile: dev
 
 hc:
-  env: development
+  env: dev
   test: foo
 
 ---
@@ -26,8 +44,8 @@ spring:
       on-profile: test
 
 hc:
-  env: testEnv
-  test: testTest
+  env: test
+  test: bar
 
 ---
 spring:
@@ -36,5 +54,5 @@ spring:
       on-profile: prod
 
 hc:
-  env: production
-  test: bar
+  env: prod
+  test: baz

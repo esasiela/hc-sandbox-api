@@ -21,12 +21,12 @@ public class TestControllerTest {
   @Test
   void testGetNestedMessage() throws Exception {
     mockMvc
-        .perform(get("/nested/abc"))
+        .perform(get("/nested/test"))
         .andExpect(status().isOk())
         .andExpect(jsonPath("$.message").value("Hello, World!"))
         .andExpect(jsonPath("$.nested").value(true))
-        .andExpect(jsonPath("$.hc.test").value("testTest"))
+        .andExpect(jsonPath("$.hc.test").value("bar"))
         .andExpect(jsonPath("$.hc.common").value("value"))
-        .andExpect(jsonPath("$.hc.env").value("testEnv"));
+        .andExpect(jsonPath("$.hc.env").value("test"));
   }
 }
