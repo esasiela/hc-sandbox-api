@@ -162,7 +162,7 @@
         <configuration>
           <skip>false</skip>
           <rulesets>
-            <ruleset>/rulesets/java/quickstart.xml</ruleset>
+            <ruleset>src/main/resources/hc-pmd-rules.xml</ruleset>
           </rulesets>
           <excludes>
             <!-- PMD gets funny with Spring Boot Application so exclude it -->
