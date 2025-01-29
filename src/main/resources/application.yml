@@ -42,10 +42,18 @@ spring:
   config:
     activate:
       on-profile: test
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8089/.well-known/jwks.json
 
 hc:
   env: test
   test: bar
+
+  jwt:
+    auth-enabled: true
 
 ---
 spring:
