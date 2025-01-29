@@ -73,13 +73,9 @@ public class SandboxController {
   @Secured("SCOPE_sandbox:read")
   public ResponseEntity<Map<String, Object>> getSecure(Authentication auth) {
 
-    if (log.isInfoEnabled()) {
-      if (auth == null) {
-        log.info("/secure - null auth");
-      } else {
-        log.info("/secure, username({}) authorities({})", auth.getName(), auth.getAuthorities());
-      }
-    }
+    if (log.isInfoEnabled() && auth == null) log.info("/secure - null auth");
+    if (log.isInfoEnabled() && auth != null)
+      log.info("/secure, username({}) authorities({})", auth.getName(), auth.getAuthorities());
 
     Map<String, Object> response = new HashMap<>();
     response.put("apple", "beans");
